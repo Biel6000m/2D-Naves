@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int points;
-
+    public GameObject projectilePrefab;
     public float shootInterval;
     public float shootTimer;
     public Transform shootPoint;
@@ -14,7 +14,15 @@ public class Player : MonoBehaviour
     {
         fixedY = -4;
     }
+    void Shoot()
+    {
+        if(Input.GetMouseButton(0)  && shootTimer <= 0)
+        {
+            shootTimer = 0.3f;
+            Instantiate(projectilePrefab, transform.position , projectilePrefab.transform.rotation);
 
+        }
+    }
    
 
     // Update is called once per frame

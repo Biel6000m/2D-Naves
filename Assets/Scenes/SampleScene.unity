@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 1771806964}
   - component: {fileID: 1771806967}
   m_Layer: 0
-  m_Name: tiny_ship6
+  m_Name: Nave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,7 +393,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0041757375, y: -0.08762509}
+  m_Offset: {x: 0.045374215, y: -0.07580952}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -404,7 +404,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5226629, y: 0.7047498}
+  m_Size: {x: 0.8496926, y: 0.7756437}
   m_EdgeRadius: 0
 --- !u!212 &1771806965
 SpriteRenderer:
@@ -467,7 +467,7 @@ Transform:
   m_GameObject: {fileID: 1771806963}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0014, y: -3.253, z: 0}
+  m_LocalPosition: {x: -0.1, y: -3.03, z: -0.1}
   m_LocalScale: {x: 0.9897, y: 1.0376, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -486,6 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
+  projectilePrefab: {fileID: 8821638252338873634, guid: 859ac5e1ea58caf43b313c4a3e6ba633, type: 3}
   shootInterval: 0
   shootTimer: 0
   shootPoint: {fileID: 0}
@@ -501,7 +502,7 @@ GameObject:
   - component: {fileID: 1783745698}
   - component: {fileID: 1783745697}
   m_Layer: 0
-  m_Name: 360_F_243757367_gBpS6R5c8DB7pL5gw9gi9KXlzFfbdZOA
+  m_Name: Fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,8 +569,8 @@ Transform:
   m_GameObject: {fileID: 1783745696}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0795, y: 0.1656, z: 0}
-  m_LocalScale: {x: 1.875896, y: 3.0289745, z: 1}
+  m_LocalPosition: {x: 0.0795, y: 0.1656, z: 1.94}
+  m_LocalScale: {x: 5.5070677, y: 8.89216, z: 2.9357}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -587,7 +588,7 @@ GameObject:
   - component: {fileID: 2103151133}
   - component: {fileID: 2103151132}
   m_Layer: 0
-  m_Name: pixel-art-illustration-meteor-pixelated-meteor-space-comet-meteor-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro-vector-removebg-preview
+  m_Name: Meteorito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

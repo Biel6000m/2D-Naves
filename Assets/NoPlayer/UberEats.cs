@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UberEats : MonoBehaviour
 {
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class UberEats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = (Vector2)transform.position + Vector2.down * Time.deltaTime;
+        transform.position = (Vector2)transform.position + Vector2.down * speed * Time.deltaTime;
     }
 }
