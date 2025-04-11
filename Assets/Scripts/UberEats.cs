@@ -8,6 +8,7 @@ public class UberEats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         Destroy(gameObject , 5f);
     }
 
@@ -15,5 +16,6 @@ public class UberEats : MonoBehaviour
     void Update()
     {
         transform.position = (Vector2)transform.position + Vector2.down * speed * Time.deltaTime;
+        
     }
 }

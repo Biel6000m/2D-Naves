@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         {
             shootTimer = 0.3f;
             Instantiate(projectilePrefab, transform.position , projectilePrefab.transform.rotation);
-
+            
         }
     }
    
@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
     {
         Move();
         shootTimer -= Time.deltaTime;
+        Shoot();
+
     }
     void Move()
     {
