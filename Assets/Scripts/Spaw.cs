@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spaw : MonoBehaviour
@@ -10,6 +11,7 @@ public class Spaw : MonoBehaviour
     public Transform BorderLeft;
     public Transform BorderRight;
     public float spawnTimer;
+    
 
     
     // Start is called before the first frame update
@@ -39,7 +41,5 @@ public class Spaw : MonoBehaviour
         Instantiate(asteroid, newPosition, Quaternion.identity);
         spawnTimer = spawnInterval;
     }
-
-
-
+    
 }

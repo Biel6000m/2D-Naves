@@ -18,4 +18,14 @@ public class UberEats : MonoBehaviour
         transform.position = (Vector2)transform.position + Vector2.down * speed * Time.deltaTime;
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
+
 }
