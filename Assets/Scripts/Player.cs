@@ -1,33 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Player : MonoBehaviour
 {
+    public AudioSource source;
     public int points;
     public GameObject projectilePrefab;
     public float shootInterval;
     public float shootTimer;
     public Transform shootPoint;
     public float fixedY;
-
+    int stars = 0;
     private const float MIN_X = -2.7f;
     private const float MAX_X = 2.7f; 
     private void Awake()
     {
         fixedY = -4;
+        source = GetComponent<AudioSource>(); 
     }
     void Shoot()
-    {
+    { 
+
+        
         if(Input.GetMouseButton(0)  && shootTimer <= 0)
         {
             shootTimer = 0.3f;
             Instantiate(projectilePrefab, transform.position , projectilePrefab.transform.rotation);
-            
+            source.Play();
+
+
         }
     }
-   
 
+    public TextMeshProUGUI abel_gay;
+    
     // Update is called once per frame
     void Update()
     {
@@ -53,7 +60,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        
+        
+        if (collision.tag == "Star")
+        {
+            stars++;
+            abel_gay.text = "ESTRELLAS " + stars.ToString();
+            Destroy(collision.gameObject);
+        }
 
+    }
     private IEnumerator MoveGradually(Vector2 _target_position)
     {
         float Distance = Mathf.Abs(transform.position.x - _target_position.x);
