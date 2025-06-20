@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 public class Player : MonoBehaviour
 {
+    public AudioClip Yiyang_Negro;
     public AudioSource source;
     public int points;
     public GameObject projectilePrefab;
@@ -38,17 +39,29 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+       if(Input.GetMouseButton(0))
+        {
+            Move(Input.mousePosition);
+        }
+
+        if (Input.touchCount > 0)
+        {
+            Move(Input.GetTouch(0).position);
+        }
+
+        
+
+
         shootTimer -= Time.deltaTime;
         Shoot();
 
     }
-    void Move()
+    void Move(Vector2 position)
     {
-        if(Input.GetMouseButton(0))
-        {
-            Vector2 mousePos = Input.mousePosition;
-            Vector2 realPos = Camera.main.ScreenToWorldPoint(mousePos);
+       
+        
+
+            Vector2 realPos = Camera.main.ScreenToWorldPoint(position);
 
        
             if (realPos.x > MIN_X && realPos.x < MAX_X && Mathf.Abs(realPos.x - transform.position.x ) > 0.2f)
@@ -57,7 +70,7 @@ public class Player : MonoBehaviour
                 StartCoroutine(MoveGradually(realPos));
             }
         
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -70,6 +83,7 @@ public class Player : MonoBehaviour
             stars++;
             abel_gay.text = "ESTRELLAS " + stars.ToString();
             Destroy(collision.gameObject);
+            source.PlayOneShot(Yiyang_Negro);
         }
 
     }
